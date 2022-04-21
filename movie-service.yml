@@ -1,11 +1,6 @@
 spring:
   application:
     name: movie-service
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://accounts.google.com
   mvc:
     log-request-details: true   
   datasource:

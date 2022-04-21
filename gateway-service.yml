@@ -10,7 +10,7 @@ spring:
         registration:
           google:
             client-id: 961091149268-o5qpf4h4i7490qrpj4h49u41h9s6fgos.apps.googleusercontent.com
-            client-secret: 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s 
+            client-secret: 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
             scope: openid,profile,email
             redirect-uri: http://localhost:8080/login/oauth2/code/google
   cloud:
@@ -23,9 +23,8 @@ spring:
         - id: movie-service-route
           uri: lb://movie-service
           predicates:
-            - Path=/movie/**
+            - Path=/movies/**
           filters:
-            - StripPrefix=2
             - name: CircuitBreaker
               args:
                 name: moviesService
@@ -33,9 +32,8 @@ spring:
         - id: serie-service-route
           uri: lb://serie-service
           predicates:
-            - Path=/serie/**
+            - Path=/series/**
           filters:
-            - StripPrefix=2
             - name: CircuitBreaker
               args:
                 name: seriesService
@@ -45,7 +43,6 @@ spring:
           predicates:
             - Path=/catalog/**
           filters:
-            - StripPrefix=2
             - name: CircuitBreaker
               args:
                 name: catalogService

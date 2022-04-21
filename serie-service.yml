@@ -1,18 +1,11 @@
 spring:
   application:
     name: serie-service
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://accounts.google.com
   mvc:
     log-request-details: true   
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      uri: mongodb://localhost/test
+      uri: mongodb://localhost:27017/finalProjectBEE1
   rabbitmq:
     username: guest
     password: guest
